@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, MapPin, Users, Clock, Mail, Phone, ArrowRight, Star, Zap, Code, Smartphone, ChevronUp, Building, User, Globe } from 'lucide-react';
+import { Menu, X, Calendar, MapPin, Users, Clock, Mail, Phone, ArrowRight, Star, Zap, Code, Smartphone, ChevronUp, Building, User, Globe,Coffee } from 'lucide-react';
 
 // ---------------- HOME PAGE ----------------
 const HomePage = ({ navigateTo }) => (
@@ -76,34 +76,32 @@ const HomePage = ({ navigateTo }) => (
 );
 
 // ---------------- PROGRAMME PAGE ----------------
+
 const ProgrammePage = ({ navigateTo }) => (
-    
   <div className="min-h-screen pt-20">
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
         <div className="p-8">
           <div className="bg-gradient-to-r from-orange-100 to-blue-100 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              Programme Détaillé
-            </h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Programme Détaillé</h2>
             <p className="text-gray-600 mb-6">
-              Découvrez le programme complet de notre événement technologique
-              exceptionnel
+              Découvrez le programme complet de notre événement technologique exceptionnel
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
+              {/* 8h30 - Accueil */}
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="h-6 w-6 text-white" />
+                  <Users className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-gray-800">
-                    09:00 - Accueil et Dejeuner de bienvenue 
-                            <br /> Arrivee des participants
+                    8h30 - 9h00 : ACCUEIL ET PETIT DEJEUNER
                   </h3>
-                  <p className="text-gray-600">
-                    Petit-déjeuner et première prise de contact
-                  </p>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Arrivée des participants</li>
+                    <li>Enregistrement et remise des badges</li>
+                  </ul>
                 </div>
               </div>
 
@@ -112,12 +110,7 @@ const ProgrammePage = ({ navigateTo }) => (
                   <Star className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-gray-800">
-                    10:00 - Confére d'ouverture
-                  </h3>
-                  <p className="text-gray-600">
-                    Les tendances technologiques de demain
-                  </p>
+                  <h3 className="font-bold text-lg text-gray-800">9h30 - 10h30 : WORKSHOP  (ZEBRA ASSET INTELLIGENCE SOLUTIONS)</h3>
                 </div>
               </div>
 
@@ -127,11 +120,57 @@ const ProgrammePage = ({ navigateTo }) => (
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-gray-800">
-                    11:30 - Ateliers pratiques
+                    10h30 - 11h00 : QUESTIONS-REPONSES
                   </h3>
-                  <p className="text-gray-600">
-                    Sessions hands-on avec les experts
-                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Smartphone className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-gray-800">
+                    11h00 - 11h45 : CAS D’ÉTUDE ET APPLICATIONS PRATIQUES
+                  </h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Témoignages Clients (CENTAURES LOGISTICS,  AGL, OLAM etc)</li>
+                    <li>
+                      Démonstrations direct des produits et solutions ZEBRA
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Coffee className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-gray-800">
+                    11h45 - 12h00 : QUESTIONS-REPONSES
+                  </h3>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-gray-800">
+                    12h00 - 12h15 : CLÔTURE
+                  </h3>
+                </div>
+              </div>
+
+              {/* 12h00 - Networking */}
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-gray-800"> 12h15 - 13h00 : DÉJEUNER-BUFFET</h3>
                 </div>
               </div>
             </div>
@@ -150,6 +189,7 @@ const ProgrammePage = ({ navigateTo }) => (
     </div>
   </div>
 );
+
 
 
 
@@ -453,11 +493,12 @@ function App() {
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-orange-500" />
-                  <span className="text-gray-400">contact@widevitech.com</span>
+                  <span className="text-gray-400">wsb@widevitech.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-orange-500" />
-                  <span className="text-gray-400">+225 XX XX XX XX</span>
+                  <span className="text-gray-400">+225 0707902930 /+225 0703040506</span>
+
                 </div>
               </div>
             </div>
