@@ -28,6 +28,7 @@ export default function InformationPage() {
   });
 
   const [emailjsLoaded, setEmailjsLoaded] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   // Charger EmailJS
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function InformationPage() {
     script.async = true;
     script.onload = () => {
       if (window.emailjs) {
-        window.emailjs.init("QKj0QWu6yXI_4ZvWu");
+        window.emailjs.init("10fZc4jtl5v5YyIxx"); // ⚠️ Remplace par ta clé PUBLIC KEY
         setEmailjsLoaded(true);
       }
     };
@@ -70,12 +71,12 @@ export default function InformationPage() {
     e.preventDefault();
     if(emailjsLoaded && window.emailjs) {
       window.emailjs.sendForm(
-        "service_84hiijr",
-        "template_wb6ar1f",
+        "service_nqpl5bh",   // ⚠️ Ton service ID
+        "template_sk3kpyq", // ⚠️ Ton template ID
         "#contact-form",
-        "QKj0QWu6yXI_4ZvWu"
+        "10fZc4jtl5v5YyIxx" // ⚠️ Ta clé PUBLIC KEY
       ).then(() => {
-        alert("✅ Email envoyé avec succès !");
+        setSuccess(true);
         setFormData({
           company: "",
           job: "",
@@ -96,6 +97,24 @@ export default function InformationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
+
+      {/* Confirmation Modal */}
+      {success && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center max-w-md">
+            <h2 className="text-2xl font-bold text-green-600 mb-4">✅ Message envoyé</h2>
+            <p className="text-gray-700 mb-6">
+              Merci pour votre demande. Nous vous recontacterons rapidement.
+            </p>
+            <button
+              onClick={() => setSuccess(false)}
+              className="bg-orange-600 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-all"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center min-h-[400px] bg-gradient-to-br from-orange-600 via-blue-700 to-orange-800 text-white px-4 text-center">
@@ -146,32 +165,6 @@ export default function InformationPage() {
         </div>
       </section>
 
-      {/* Engagement */}
-      <section className="px-4 py-16 md:px-16 grid md:grid-cols-2 gap-8">
-        <div className="bg-white text-gray-800 rounded-xl shadow p-6 hover:shadow-lg transition-shadow flex flex-col items-center md:items-start gap-4">
-          <img src="/logos/zebra-logo.png" alt="Zebra" className="h-16"/>
-          <h3 className="font-bold text-xl mb-2">Class-Leading Hardware</h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Soutien marketing</li>
-            <li>Ressources commerciales</li>
-            <li>Écosystème de distribution mondial</li>
-            <li>Certification et formation</li>
-            <li>Ressources techniques</li>
-          </ul>
-        </div>
-        <div className="bg-blue-900 text-white rounded-xl shadow p-6 hover:shadow-lg transition-shadow flex flex-col items-center md:items-end gap-4">
-          <img src="/logos/widevitech-logo.png" alt="Widevitech" className="h-16"/>
-          <h3 className="font-bold text-xl mb-2">Value-Added Distribution</h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Options de financement</li>
-            <li>Livraison directe aux utilisateurs finaux</li>
-            <li>Services de configuration personnalisée</li>
-            <li>Programme de génération de leads</li>
-            <li>Équipe de développement Zebra Biz dédiée</li>
-          </ul>
-        </div>
-      </section>
-
       {/* Formulaire */}
       <section className="px-4 py-16">
         <h2 className="text-3xl font-bold mb-6 text-center">Contactez-nous pour la mise à niveau</h2>
@@ -210,3 +203,4 @@ export default function InformationPage() {
     </div>
   );
 }
+// informationpage emailj egale à cayyoan7@gmail.com

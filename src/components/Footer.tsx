@@ -46,6 +46,16 @@ export default function Footer({ navigateTo }: FooterProps) {
                   Réserver
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => navigateTo("information")}
+                  className="hover:text-white transition-colors"
+                >
+                  Information
+                </button>
+              </li>
+
+
             </ul>
           </div>
 
