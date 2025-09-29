@@ -37,7 +37,7 @@ export default function InformationPage() {
     script.async = true;
     script.onload = () => {
       if (window.emailjs) {
-        window.emailjs.init("10fZc4jtl5v5YyIxx"); // ⚠️ Remplace par ta clé PUBLIC KEY
+        window.emailjs.init("W4aUiEcsoZ_tBDrt9"); // ⚠️ Remplace par ta clé PUBLIC KEY
         setEmailjsLoaded(true);
       }
     };
@@ -71,10 +71,10 @@ export default function InformationPage() {
     e.preventDefault();
     if(emailjsLoaded && window.emailjs) {
       window.emailjs.sendForm(
-        "service_nqpl5bh",   // ⚠️ Ton service ID
-        "template_sk3kpyq", // ⚠️ Ton template ID
+        "service_uqogvuh",   // ⚠️ Ton service ID
+        "template_203qs05", // ⚠️ Ton template ID
         "#contact-form",
-        "10fZc4jtl5v5YyIxx" // ⚠️ Ta clé PUBLIC KEY
+        "W4aUiEcsoZ_tBDrt9" // ⚠️ Ta clé PUBLIC KEY
       ).then(() => {
         setSuccess(true);
         setFormData({
@@ -119,9 +119,9 @@ export default function InformationPage() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center min-h-[400px] bg-gradient-to-br from-orange-600 via-blue-700 to-orange-800 text-white px-4 text-center">
         <div className="flex gap-4 items-center mb-6">
-          <img src="/logos/widevitech-logo.png" alt="Widevitech" className="h-16"/>
+          <img src="public/logos/widevitech-logo.png" alt="Widevitech" className="h-16"/>
           <span className="text-3xl font-bold">&</span>
-          <img src="/logos/zebra-logo.png" alt="Zebra" className="h-16"/>
+          <img src="public/logos/zebra-logo.png" alt="Zebra" className="h-16"/>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Arrêt de commercialisation !

@@ -32,7 +32,7 @@ export default function FormulairePage() {
     script.async = true;
     script.onload = () => {
       if (window.emailjs) {
-        window.emailjs.init("10fZc4jtl5v5YyIxx"); // ⚠️ Remplace par ta clé publique
+        window.emailjs.init("W4aUiEcsoZ_tBDrt9"); // ⚠️ Remplace par ta clé publique
         setEmailjsLoaded(true);
       }
     };
@@ -52,9 +52,9 @@ export default function FormulairePage() {
       window.emailjs
         .sendForm(
           "service_fs8s7vk", // ⚠️ Ton service ID
-          "template_45up8xp", // ⚠️ Ton template ID
+          "template_rxmjsul", // ⚠️ Ton template ID
           "#contact-form",
-          "gsLnF2li7uqSnFCJ7" // ⚠️ Ta clé publique
+          "W4aUiEcsoZ_tBDrt9" // ⚠️ Ta clé publique
         )
         .then(() => {
           setSuccess(true);
