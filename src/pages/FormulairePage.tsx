@@ -51,7 +51,7 @@ export default function FormulairePage() {
     if (emailjsLoaded && window.emailjs) {
       window.emailjs
         .sendForm(
-          "service_uqogvuh", // ⚠️ Ton service ID
+          "service_jbie6y8", // ⚠️ Ton service ID
           "template_rxmjsul", // ⚠️ Ton template ID
           "#contact-form",
           "W4aUiEcsoZ_tBDrt9" // ⚠️ Ta clé publique
